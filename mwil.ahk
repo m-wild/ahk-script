@@ -1,14 +1,12 @@
-;AutoHotKey Script
-;Michael Wildman
-;wildsimulation@gmail.com
+; mwil.ahk
+; Userful functions for AHK using an Apple keyboard
+;
+; @author  Michael Wildman  wildsimulation@gmail.com
 
-
-; --- Replace default windows minimize
+; (Win + Down) Minimize active window 
 #Down::WinMinimize, A
 
-
-
-; --- switch default audio device
+; (F16) Cycle default audio playback device
 VK7f::
 Run, mmsys.cpl
 WinWait,Sound
@@ -24,10 +22,35 @@ WinWaitClose
 SoundPlay, *-1
 return
 
+; (Win + z) Switch to/from iTunes mini player
+#z::
+SetTitleMatchMode, 2
+IfWinExist, MiniPlayer
+{
+	WinActivate
+}
+else
+{
+	WinActivate iTunes
+}
+Send +^m
+return
 
+; (Win + Shift + z) Search iTunes
+#+z::
+SetTitleMatchMode, 2
+IfWinExist, MiniPlayer
+{
+	WinActivate
+}
+else
+{
+	WinActivate iTunes
+}
+Send ^f
+return
 
-; --- apple keyboard media key emulation
-; using windows key
+; (Win + F7-F12) Apple keyboard media key emulation
 #F7::Send {Media_Prev}
 #F8::Send {Media_Play_Pause}
 #F9::Send {Media_Next}
@@ -35,46 +58,17 @@ return
 #F11::Send {Volume_Down}
 #F12::Send {Volume_Up}
 
-; using F13-F19
+; (F13) PrintScreen
 VK7c::Send {PrintScreen}
-;Vk7d::Send {Volume_Down}
-;Vk7e::Send {Volume_Up}
-;Vk7f::Send {Volume_Mute}
-;Vk80::Send {Media_Prev}
-;Vk81::Send {Media_Play_Pause}
-;Vk82::Send {Media_Next}
 
+; (F14) ScrollLock
+VK7d::Send {ScrollLock}
 
-
-
-; --- unused
-; using always show taskbar
-;WinMove, ahk_exe foobar2000.exe,, 10, 435, 350, 600
-;WinMove, ahk_exe Skype.exe,, 375, 435, 400, 605, Skype
-;WinMove, Google Chrome,, 580, 0, 1340, 1050
-;WinMove, ahk_class MozillaWindowClass,, 580, 0, 1340, 1050
-;WinMove, - Chat,, 375, 593, 508, 447
-; using auto hide taskbar
-;WinMove, ahk_exe foobar2000.exe,, 10, 465, 350, 600
-;WinMove, ahk_exe Skype.exe,, 375, 465, 400, 605, Skype
-;WinMove, Google Chrome,, 640, 0, 1280, 1079
-;WinMove, - Chat,, 375, 593, 508, 479
-;;Align windows
-;#z::
-;SetTitleMatchMode, 2
-; using itunes
-;WinMove, ahk_exe Skype.exe,, 17, 17, 400, 600, Skype
-;WinMove, - Chat,, 17, 17, 400, 600
-;WinMove, MiniPlayer,, 17, 634, 400, 400
-;WinMove, ahk_class MozillaWindowClass,, 436, 0, 1484, 1050
-;WinMove, Google Chrome,, 436, 0, 1484, 1080
-;return
-; --- switch itunes mini player
-;#z::
-;SetTitleMatchMode, 2
-;IfWinExist, MiniPlayer
-;	WinActivate
-;else
-;	WinActivate iTunes
-;Send +^m
-;return
+; Apple keyboard only, F13-F19 mappings
+; Vk7c (F13)
+; Vk7d (F14)
+; Vk7e (F15)
+; Vk7f (F16)
+; Vk80 (F17)
+; Vk81 (F18)
+; Vk82 (F19)
