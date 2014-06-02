@@ -6,8 +6,23 @@
 ; (Win + Down) Minimize active window 
 #Down::WinMinimize, A
 
-; (F16) Cycle default audio playback device
-VK7f::
+; (Command + Q) Quit
+#q::Send !{F4}
+
+; (Command + W) Close window/tab
+#w::Send ^{F4}
+
+; (Command + c) Copy
+#c::Send ^c
+
+; (Command + x) Cut
+#x::Send ^x
+
+; (Command + v) Paste
+#v::Send ^v
+
+; (F15) Cycle default audio playback device
+VK7e::
 Run, mmsys.cpl
 WinWait,Sound
 ControlSend,SysListView321,{Down}
@@ -64,6 +79,13 @@ VK7c::Send {PrintScreen}
 ; (F14) ScrollLock
 VK7d::Send {ScrollLock}
 
+; (F16) Toggle NVIDIA Shadow Play
+Vk7f::Send !{F9}
+
+; (F17) Save NVIDIA Shadow recording
+Vk80::Send !{F10}
+
+; Help:
 ; Apple keyboard only, F13-F19 mappings
 ; Vk7c (F13)
 ; Vk7d (F14)
