@@ -49,6 +49,7 @@ return
 
 ; (F13) PrintScreen
 VK7c::SendInput {PrintScreen}
+^VK7c::SendInput ^{PrintScreen}
 
 ; (F14) ScrollLock
 VK7d::SendInput {ScrollLock}
