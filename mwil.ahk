@@ -67,3 +67,4 @@ Vk80::SendInput !{F10}
 Vk81::SendInput {Insert}
 !Vk81::SendInput !{Insert}
 ^Vk81::SendInput ^{Insert}
+^!Vk81::SendInput ^!{Insert}
