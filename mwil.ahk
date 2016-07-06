@@ -57,8 +57,8 @@ VK7d::SendInput {ScrollLock}
 ; Vk7e (F15) Pause/Break
 Vk7e::SendInput {Pause}
 
-; (F16) Toggle NVIDIA Shadow Play
-Vk7f::SendInput !{F9}
+; (F16) Toggle NVIDIA Share
+Vk7f::SendInput ^!{PgUp}
 
 ; (F17) Save NVIDIA Shadow recording
 Vk80::SendInput !{F10}
