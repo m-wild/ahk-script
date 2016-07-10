@@ -1,6 +1,10 @@
+
+#### project has been moved to tehmantra/dotfiles.git
+
+
+---
 ## ahk-script
 My AutoHotKey scripts
-
 
 #### Help
 
